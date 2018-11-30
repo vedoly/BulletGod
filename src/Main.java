@@ -1,10 +1,12 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
  
 public class Main extends Application 
-{
+{	
+	
   
     public void start(Stage theStage) 
     {
@@ -17,6 +19,8 @@ public class Main extends Application
         theStage.setResizable(false);
         EventManager a = new EventManager(root);
         a.drawBoard();
+        	theScene.addEventHandler(KeyEvent.KEY_PRESSED, event->a.MoveUnitOne(event));
+        	//theScene.addEventHandler(KeyEvent.KEY_PRESSED, event->a.MoveUnitTwo(event));
         theStage.show();
     }
     
